@@ -16,10 +16,37 @@
 - Java OpenJDK 8
 - Liquibase
 
-Liquibase features and limitations:
+## Liquibase features and limitations
+
 - YAML/JSON changelogs formats support
-- Supported databases out of box according the list: http://www.liquibase.org/databases.html
+- Supported databases according the list: http://www.liquibase.org/databases.html
+- Pre-installed JDBC drivers for Postgres, MariaDB/MySQL
 - To include JAR into classpath just add it to `/usr/local/lib/liquibase/lib` directory
+
+## FAQ
+
+**Q1.** I got an error `Cannot find database driver: com.mysql.jdbc.Driver`
+
+**A1.** To use pre-installed MariaDB/J Connector you should specify `--driver=org.mariadb.jdbc.Driver` or install your own native MySQL/J Connector here: https://dev.mysql.com/downloads/connector/j/
+
+---
+
+**Q2.** Where can I find other JDBC drivers?
+
+**A2.** Use this table:
+
+| DBMS | JDBC driver | URL |
+|---|---|---|
+| MySQL | com.mysql.jdbc.Driver | http://dev.mysql.com/downloads/connector/j/ |
+| MariaDB | org.mariadb.jdbc.Driver | https://downloads.mariadb.org/connector-java/ |
+| PostgreSQL | org.postgresql.Driver | https://jdbc.postgresql.org/download.html |
+| MSSQL	| com.microsoft.jdbc.sqlserver.SQLServerDriver | http://www.microsoft.com/en-us/download |
+| Oracle | oracle.jdbc.OracleDriver | http://www.oracle.com/technetwork/database/jdbc-112010-090769.html |
+| SQLite | org.sqlite.JDBC | https://github.com/xerial/sqlite-jdbc/releases |
+| FireBird | org.firebirdsql.jdbc | http://www.firebirdsql.org/en/jdbc-driver/ |
+| Derby	| org.apache.derby.jdbc.ClientDriver | http://db.apache.org/derby/derby_downloads.html |
+
+---
 
 ## How to use?
 

@@ -4,7 +4,9 @@ MAINTAINER Dmitry Morgachev <izonder@gmail.com>
 
 ENV LIQUIBASE_VERSION=3.5.3 \
     LIQUIBASE_PREFIX=/usr/local/lib \
-    LIQUIBASE_BIN=/usr/local/bin
+    LIQUIBASE_BIN=/usr/local/bin \
+    JDBC_POSTGRES_VERSION=9.4.1212 \
+    JDBC_MYSQL_VERSION=1.5.7
 
 RUN set -x \
 
@@ -25,6 +27,13 @@ RUN set -x \
     && sed -i "s|bash$|ash|" ${LIQUIBASE_PREFIX}/liquibase/liquibase \
     && chmod +x ${LIQUIBASE_PREFIX}/liquibase/liquibase \
     && ln -s ${LIQUIBASE_PREFIX}/liquibase/liquibase ${LIQUIBASE_BIN} \
+
+##############################################################################
+# Install JDBC drivers
+##############################################################################
+
+    && curl -o ${LIQUIBASE_PREFIX}/liquibase/lib/postgresql-${JDBC_POSTGRES_VERSION}.jar -sSL https://jdbc.postgresql.org/download/postgresql-${JDBC_POSTGRES_VERSION}.jar \
+    && curl -o ${LIQUIBASE_PREFIX}/liquibase/lib/mariadb-${JDBC_MYSQL_VERSION}.jar -sSL https://downloads.mariadb.com/Connectors/java/connector-java-${JDBC_MYSQL_VERSION}/mariadb-java-client-${JDBC_MYSQL_VERSION}.jar \
 
 ##############################################################################
 # Clean up
