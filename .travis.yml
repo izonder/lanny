@@ -11,3 +11,6 @@ before_install:
 
 script:
   - docker run -it --rm izonder/lanny liquibase --version
+
+after_success:
+  - curl -X POST https://registry.hub.docker.com/u/izonder/lanny/trigger/$DOCKER_TRIGGER_TOKEN/
