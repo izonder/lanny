@@ -5,8 +5,8 @@ MAINTAINER Dmitry Morgachev <izonder@gmail.com>
 ENV LIQUIBASE_VERSION=3.5.3 \
     LIQUIBASE_PREFIX=/usr/local/lib \
     LIQUIBASE_BIN=/usr/local/bin \
-    JDBC_POSTGRES_VERSION=9.4.1212 \
-    JDBC_MYSQL_VERSION=1.5.7
+    JDBC_POSTGRES_VERSION=42.0.0 \
+    JDBC_MYSQL_VERSION=1.5.9
 
 RUN set -x \
 
