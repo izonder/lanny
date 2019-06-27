@@ -11,7 +11,7 @@
 - Alpine linux as base-image
 - S6-overlay to run multiple processes in container
 - Nginx with basic configuration
-- Node.js (fully-static without NPM)
+- Node.js
 - Yarn package manager
 - Java OpenJDK 8
 - Liquibase
