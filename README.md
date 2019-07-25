@@ -16,6 +16,11 @@
 - Java OpenJDK 8
 - Liquibase
 
+## Supported tags
+
+- `latest` - the last stable version of the image
+- `3.5.3` - the version with Liquibase v3.5.3 
+
 ## Liquibase features and limitations
 
 - YAML/JSON changelogs formats support
