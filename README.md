@@ -2,24 +2,33 @@
 
 **LANNY** = **L**iquibase + **A**lpine + **N**ginx + **N**ode.js + **Y**arn
 
-[![](https://images.microbadger.com/badges/version/izonder/lanny.svg)](https://microbadger.com/images/izonder/lanny "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/izonder/lanny.svg)](https://microbadger.com/images/izonder/lanny "Get your own image badge on microbadger.com")
-[![Build Status](https://travis-ci.org/izonder/lanny.svg?branch=master)](https://travis-ci.org/izonder/lanny)
+[![](https://images.microbadger.com/badges/version/izonder/lanny:12.svg)](https://microbadger.com/images/izonder/lanny "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/izonder/lanny:12.svg)](https://microbadger.com/images/izonder/lanny "Get your own image badge on microbadger.com")
+[![Build Status](https://travis-ci.org/izonder/lanny.svg?branch=nodejs-12)](https://travis-ci.org/izonder/lanny)
+
+## IMPORTANT! Breaking changes announcement
+
+Due to new JDK verion we have released a major upgrade, which contains:
+- [OpenJDK 11](https://openjdk.java.net/projects/jdk/11/)
+- [Parent package v12](https://hub.docker.com/r/izonder/janny/)
+
+Please be aware of that and make sure these changes won't affect your functionality.
 
 ## Features
 
 - Alpine linux as base-image
 - S6-overlay to run multiple processes in container
-- Nginx with basic configuration
-- Node.js
+- Nginx v1.16.x with basic configuration
+- Node.js v12.x.x
 - Yarn package manager
-- Java OpenJDK 8
+- Java OpenJDK 11 (JRE)
 - Liquibase
 
 ## Supported tags
 
-- `latest` - the last stable version of the image
-- `3.5.3` - the version with Liquibase v3.5.3 
+- `latest` [(Dockerfile)](https://github.com/izonder/lanny/blob/master/Dockerfile)
+- `12` [(Dockerfile)](https://github.com/izonder/lanny/blob/nodejs-12/Dockerfile) 
+- `3.5.3` (ad-hoc: the version with Liquibase v3.5.3)
 
 ## Liquibase features and limitations
 

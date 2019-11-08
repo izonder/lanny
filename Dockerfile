@@ -1,12 +1,12 @@
-FROM izonder/janny:latest
+FROM izonder/janny:12
 
 MAINTAINER Dmitry Morgachev <izonder@gmail.com>
 
-ENV LIQUIBASE_VERSION=3.6.3 \
+ENV LIQUIBASE_VERSION=3.8.1 \
     LIQUIBASE_PREFIX=/usr/local/lib \
     LIQUIBASE_BIN=/usr/local/bin \
-    JDBC_POSTGRES_VERSION=42.2.6 \
-    JDBC_MYSQL_VERSION=2.4.2
+    JDBC_POSTGRES_VERSION=42.2.8 \
+    JDBC_MYSQL_VERSION=2.4.4
 
 RUN set -x \
 
