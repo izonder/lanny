@@ -22,7 +22,7 @@ RUN set -x \
 ##############################################################################
 
     && mkdir ${LIQUIBASE_PREFIX}/liquibase \
-    && curl -o /tmp/liquibase-${LIQUIBASE_VERSION}.tar.gz -sSL https://github.com/liquibase/liquibase/releases/download/liquibase-parent-${LIQUIBASE_VERSION}/liquibase-${LIQUIBASE_VERSION}-bin.tar.gz \
+    && curl -o /tmp/liquibase-${LIQUIBASE_VERSION}.tar.gz -sSL https://github.com/liquibase/liquibase/releases/download/v${LIQUIBASE_VERSION}/liquibase-${LIQUIBASE_VERSION}.tar.gz \
     && tar -zxf /tmp/liquibase-${LIQUIBASE_VERSION}.tar.gz -C ${LIQUIBASE_PREFIX}/liquibase \
     && sed -i "s|bash$|ash|" ${LIQUIBASE_PREFIX}/liquibase/liquibase \
     && chmod +x ${LIQUIBASE_PREFIX}/liquibase/liquibase \
