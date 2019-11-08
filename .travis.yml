@@ -13,4 +13,6 @@ script:
   - docker run -it --rm izonder/lanny liquibase --version
 
 after_success:
-  - curl -X POST https://registry.hub.docker.com/u/izonder/lanny/trigger/$DOCKER_TRIGGER_TOKEN/
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker tag izonder/lanny izonder/lanny:12
+  - docker push izonder/lanny:12
