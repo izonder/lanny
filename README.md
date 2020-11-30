@@ -27,7 +27,9 @@ Please be aware of that and make sure these changes won't affect your functional
 ## Supported tags
 
 - `latest` [(Dockerfile)](https://github.com/izonder/lanny/blob/master/Dockerfile)
-- `12` [(Dockerfile)](https://github.com/izonder/lanny/blob/nodejs-12/Dockerfile) 
+- `14` [(Dockerfile)](https://github.com/izonder/lanny/blob/nodejs-14/Dockerfile)
+- `12` [(Dockerfile)](https://github.com/izonder/lanny/blob/nodejs-12/Dockerfile)
+- `10` [(Dockerfile)](https://github.com/izonder/lanny/blob/nodejs-10/Dockerfile)
 - `3.5.3` (ad-hoc: the version with Liquibase v3.5.3)
 
 ## Liquibase features and limitations
