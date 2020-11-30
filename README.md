@@ -2,9 +2,9 @@
 
 **LANNY** = **L**iquibase + **A**lpine + **N**ginx + **N**ode.js + **Y**arn
 
-[![](https://images.microbadger.com/badges/version/izonder/lanny:14.svg)](https://microbadger.com/images/izonder/lanny "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/izonder/lanny:14.svg)](https://microbadger.com/images/izonder/lanny "Get your own image badge on microbadger.com")
-[![Build Status](https://travis-ci.org/izonder/lanny.svg?branch=nodejs-14)](https://travis-ci.org/izonder/lanny)
+[![](https://images.microbadger.com/badges/version/izonder/lanny.svg)](https://microbadger.com/images/izonder/lanny "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/izonder/lanny.svg)](https://microbadger.com/images/izonder/lanny "Get your own image badge on microbadger.com")
+[![Build Status](https://travis-ci.org/izonder/lanny.svg?branch=master)](https://travis-ci.org/izonder/lanny)
 
 ## IMPORTANT! Breaking changes announcement
 
