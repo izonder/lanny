@@ -2,11 +2,11 @@ FROM izonder/janny:latest
 
 MAINTAINER Dmitry Morgachev <izonder@gmail.com>
 
-ENV LIQUIBASE_VERSION=4.2.0 \
+ENV LIQUIBASE_VERSION=4.7.0 \
     LIQUIBASE_PREFIX=/usr/local/lib \
     LIQUIBASE_BIN=/usr/local/bin \
-    JDBC_POSTGRES_VERSION=42.2.18 \
-    JDBC_MYSQL_VERSION=2.7.1
+    JDBC_POSTGRES_VERSION=42.3.1 \
+    JDBC_MYSQL_VERSION=2.7.3
 
 RUN set -x \
 
