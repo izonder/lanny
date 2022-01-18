@@ -1,0 +1,25 @@
+name: Build Docker Image
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the Docker image
+        run: |
+          docker info
+          docker build --no-cache --pull -t izonder/lanny .
+      - name: Test the image
+        run: |
+          docker run --rm izonder/lanny liquibase --version
+      - name: Assign the tag
+        run: docker tag izonder/lanny izonder/lanny:16
+      - name: Publish the image
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+          docker push izonder/lanny:16
