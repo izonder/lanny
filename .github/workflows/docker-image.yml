@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Build the Docker image
         run: |
           docker info
@@ -15,11 +15,11 @@ jobs:
         run: |
           docker run --rm izonder/lanny liquibase --version
       - name: Assign the tag
-        run: docker tag izonder/lanny izonder/lanny:16
+        run: docker tag izonder/lanny izonder/lanny:18
       - name: Publish the image
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-          docker push izonder/lanny:16
+          docker push izonder/lanny:18

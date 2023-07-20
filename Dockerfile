@@ -1,8 +1,8 @@
-FROM izonder/janny:16
+FROM izonder/janny:18
 
 MAINTAINER Dmitry Morgachev <izonder@gmail.com>
 
-ENV LIQUIBASE_VERSION=4.7.0 \
+ENV LIQUIBASE_VERSION=4.23.0 \
     LIQUIBASE_PREFIX=/usr/local/lib \
     LIQUIBASE_BIN=/usr/local/bin
 

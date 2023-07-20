@@ -2,13 +2,13 @@
 
 **LANNY** = **L**iquibase + **A**lpine + **N**ginx + **N**ode.js + **Y**arn
 
-[![Build Docker image](https://github.com/izonder/lanny/actions/workflows/docker-image.yml/badge.svg?branch=nodejs-16)](https://github.com/izonder/lanny/actions/workflows/docker-image.yml)
+[![Build Docker image](https://github.com/izonder/lanny/actions/workflows/docker-image.yml/badge.svg?branch=nodejs-18)](https://github.com/izonder/lanny/actions/workflows/docker-image.yml)
 
 ## IMPORTANT! Breaking changes announcement
 
 Due to new JDK verion we have released a major upgrade, which contains:
-- [OpenJDK 11](https://openjdk.java.net/projects/jdk/11/)
-- [Parent package v16](https://hub.docker.com/r/izonder/janny/)
+- [OpenJDK 17](https://openjdk.org/projects/jdk/17/)
+- [Parent package v18](https://hub.docker.com/r/izonder/janny/)
 
 Please be aware of that and make sure these changes won't affect your functionality.
 
@@ -16,15 +16,16 @@ Please be aware of that and make sure these changes won't affect your functional
 
 - Alpine linux as base-image
 - S6-overlay to run multiple processes in container
-- Nginx v1.20.x with basic configuration
-- Node.js v16.x.x
+- Nginx v1.24.x with basic configuration
+- Node.js v18.x.x
 - Yarn package manager
-- Java OpenJDK 11 (JRE)
+- Java OpenJDK 17 (JRE)
 - Liquibase
 
 ## Supported tags
 
 - `latest` [(Dockerfile)](https://github.com/izonder/lanny/blob/master/Dockerfile)
+- `18` [(Dockerfile)](https://github.com/izonder/lanny/blob/nodejs-18/Dockerfile)
 - `16` [(Dockerfile)](https://github.com/izonder/lanny/blob/nodejs-16/Dockerfile)
 - `14` [(Dockerfile)](https://github.com/izonder/lanny/blob/nodejs-14/Dockerfile)
 - `12` [(Dockerfile)](https://github.com/izonder/lanny/blob/nodejs-12/Dockerfile)
