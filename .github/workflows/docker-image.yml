@@ -2,24 +2,47 @@ name: Build Docker Image
 
 on: [push, pull_request, workflow_dispatch]
 
+env:
+  TEST_TAG: izonder/lanny:test
+  PUBLISH_TAG: izonder/lanny:latest
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Build the Docker image
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      -
+        name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+      -
+        name: Build and export to Docker
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          load: true
+          tags: ${{ env.TEST_TAG }}
+      -
+        name: Test
         run: |
-          docker info
-          docker build --no-cache --pull -t izonder/lanny .
-      - name: Test the image
-        run: |
-          docker run --rm izonder/lanny liquibase --version
-      - name: Assign the tag
-        run: docker tag izonder/lanny izonder/lanny:latest
-      - name: Publish the image
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: |
-          echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-          docker push izonder/lanny:latest
+          docker run --rm ${{ env.TEST_TAG }} node -v
+          docker run --rm ${{ env.TEST_TAG }} yarn --version
+          docker run --rm ${{ env.TEST_TAG }} liquibase --version
+      -
+        name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ env.PUBLISH_TAG }}
